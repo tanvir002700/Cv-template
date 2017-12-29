@@ -615,6 +615,24 @@
   \vspace{-4mm}
 }
 
+% Define an environment for cvprojects(for cventry)
+\newenvironment{cvprojects}[1][]{
+  \vspace{-4mm}
+  \begin{justify}
+  \textbf{ #1}  
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{
+  \end{itemize}
+  \end{justify}
+  \vspace{-4mm}
+}
+
+\newcommand{\projectitem}[2]{
+    \item\textbf{#1} \\
+    {#2}
+}
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
