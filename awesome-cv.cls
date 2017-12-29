@@ -601,7 +601,7 @@
 }
 
 % Define an environment for cvitems(for cventry)
-\newenvironment{cvitems}[1][hello]{
+\newenvironment{cvitems}[1][]{
   \vspace{-4mm}
   \begin{justify}
   \textbf{ #1}  
