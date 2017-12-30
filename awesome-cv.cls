@@ -632,6 +632,20 @@
     {#2}
 }
 
+\newcommand{\cvdoublecolumn}[2]{%
+    \begin{minipage}[t]{5in} { #1}\end{minipage}%
+        \begin{minipage}[t]{5in} { #2}\end{minipage}%
+}
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{#7}}
+
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
 %-------------------------------------------------------------------------------
