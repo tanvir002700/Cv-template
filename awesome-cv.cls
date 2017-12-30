@@ -623,7 +623,7 @@
 }{
   \end{itemize}
   \end{justify}
-  \vspace{-4mm}
+  \vspace{4mm}
 }
 
 \newcommand{\projectitem}[2]{
