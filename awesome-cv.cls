@@ -529,7 +529,7 @@
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[6]{  
+\newcommand*{\cventry}[5]{  
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{12.5cm} R{4.5cm}}
@@ -538,7 +538,6 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{17cm}}{\descriptionstyle{#5}} \\
-    \multicolumn{2}{L{17cm}}{\descriptionstyle{#6}} \\ 
   \end{tabular*}
   \vspace{-4mm}
 }
@@ -603,7 +602,6 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}[1][]{
-  \vspace{-4mm}
   \begin{justify}
   \textbf{ #1}  
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
@@ -612,7 +610,6 @@
 }{
   \end{itemize}
   \end{justify}
-  \vspace{-4mm}
 }
 
 % Define an environment for cvprojects(for cventry)
