@@ -602,8 +602,9 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}[1][]{
+  \vspace{-4mm}
   \begin{justify}
-  \textbf{ #1}  
+  \textbf{ #1}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
