@@ -620,7 +620,7 @@
 % Define an environment for1cvitems(for cventry)
 \newenvironment{cvitems}[1][]{
   \begin{justify}
-  \textbf{ #1}
+  {\textbf{#1}}
   \begin{itemize}[leftmargin=4ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
@@ -632,7 +632,7 @@
 % Define an environment for cvprojects(for cventry)
 \newenvironment{cvprojects}[1][]{
   \begin{justify}
-  \ifx #1 
+  \ifx #1
     {#1}
   \fi
   \begin{itemize}[leftmargin=4ex, nosep, noitemsep]
