@@ -551,7 +551,7 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{17cm}}{\descriptionstyle{#5}} \\
   \end{tabular*}
-  \vspace{-4mm}
+  \vspace{-3mm}
 }
 
 % Define an environment for cvsubentry
@@ -614,7 +614,6 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}[1][]{
-  \vspace{-4mm}
   \begin{justify}
   \textbf{ #1}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
@@ -629,7 +628,9 @@
 \newenvironment{cvprojects}[1][]{
   \vspace{-4mm}
   \begin{justify}
-  \textbf{ #1}  
+  \ifx #1 
+    {#1}
+  \fi
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
