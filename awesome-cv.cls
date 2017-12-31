@@ -267,6 +267,10 @@
 \newcommand*{\skilltypestyle}[1]{{\fontsize{\@small}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{\@small}{1em}\bodyfontlight\color{text} #1}}
 
+% For elements of project
+\newcommand*{\projecttitlestyle}[1]{{\fontsize{\@medium}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\projectdescriptionstyle}[1]{{\fontsize{\@small}{1em}\bodyfontlight\color{text} #1}}
+
 % For elements of the cover letter
 \newcommand*{\paragraphstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\recipientaddressstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
@@ -627,23 +631,21 @@
 
 % Define an environment for cvprojects(for cventry)
 \newenvironment{cvprojects}[1][]{
-  \vspace{-4mm}
   \begin{justify}
   \ifx #1 
     {#1}
   \fi
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=4ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{
   \end{itemize}
   \end{justify}
-  \vspace{4mm}
 }
 
 \newcommand{\projectitem}[2]{
-    \item\textbf{#1} \\
-    {#2}
+    \item\projecttitlestyle{#1} \\
+    \projectdescriptionstyle{#2}
 }
 
 \newcommand{\cvdoublecolumn}[2]{%
