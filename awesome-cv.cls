@@ -633,6 +633,16 @@
   \end{justify}
 }
 
+\newenvironment{cvitemsNumber}[1][]{
+  \begin{justify}
+  {\textbf{#1}}
+  \begin{enumerate}[leftmargin=4ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+}{
+\end{enumerate}
+  \end{justify}
+}
+
 % Define an environment for cvprojects(for cventry)
 \newenvironment{cvprojects}[1][]{
   \begin{justify}
