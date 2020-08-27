@@ -621,6 +621,10 @@
   \\
 }
 
+\newcommand*{\boldWord}[1] {
+    \bodyfont{\bfseries{#1}}
+}
+
 % Define an environment for1cvitems(for cventry)
 \newenvironment{cvitems}[1][]{
   \begin{justify}
