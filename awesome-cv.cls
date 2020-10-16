@@ -316,17 +316,17 @@
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
-% Defines writer's homepage (optional)
-% Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+% Defines writer's linked-in (optional)
+% Usage: \linkedin{<linked-in-nick>}
+\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
 
-% Defines writer's linked-in (optional)
-% Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+% Defines writer's homepage (optional)
+% Usage: \homepage{<url>}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
 % Defines writer's stackoverflow profile (optional)
 % Usage: \stackoverflow{<so userid>}{<so username>}
@@ -442,16 +442,6 @@
             {\@headersocialsep}
           \href{mailto:\@email}{\faEnvelope\ \@email}
         }
-      \ifthenelse{\isundefined{\@homepage}}
-        {}
-        {
-          \ifbool{isstart}
-            {
-              \setbool{istart}{false} 
-            }
-            {\@headersocialsep}
-          \href{http://\@homepage}{\faNewspaperO\ \@homepage}
-        }
       \ifthenelse{\isundefined{\@github}}
         {}
         {
@@ -501,6 +491,16 @@
             }
             {\@headersocialsep}
           \faSkype\ \@skype
+        }
+      \ifthenelse{\isundefined{\@homepage}}
+        {}
+        {
+          \ifbool{isstart}
+            {
+              \setbool{istart}{false} 
+            }
+            {\@headersocialsep}
+          \href{http://\@homepage}{\faNewspaperO\ \@homepage}
         }
     } \\
     \ifthenelse{\isundefined{\@quote}}
