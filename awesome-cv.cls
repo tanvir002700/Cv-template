@@ -231,8 +231,8 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{\@xlarge}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{\@xlarge}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{\@large}{1em}\headerfont\color{darkgray} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{\@large}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{7pt}{.5em}\headerfont\color{text} #1}}
@@ -295,6 +295,7 @@
 % Usage: \lastname{<lastname>}
 % Usage: \familyname{<familyname>}
 \newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\image}[1]{\def\@profileimage{#1}}
 \newcommand*{\firstname}[1]{\def\@firstname{#1}}
 \newcommand*{\lastname}[1]{\def\@lastname{#1}}
 \newcommand*{\familyname}[1]{\def\@lastname{#1}}
@@ -411,7 +412,8 @@
 % Define a header for CV
 % Usage: \makecvheader
 \newcommand*{\makecvheader}{
-  \begin{center}
+ \begin{multicols}{2}
+    \begin{flushleft}
     \headerfirstnamestyle{
       \@firstname
     } \headerlastnamestyle{
@@ -439,8 +441,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{mailto:\@email}{\faEnvelope\ \@email}
+          \newline
         }
       \ifthenelse{\isundefined{\@github}}
         {}
@@ -449,8 +451,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{https://github.com/\@github}{\faGithubSquare\ \@github}
+          \newline
         }
       \ifthenelse{\isundefined{\@stackoverflowid}}
         {}
@@ -459,8 +461,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\ \@stackoverflowname}
+          \newline
         }
       \ifthenelse{\isundefined{\@linkedin}}
         {}
@@ -469,8 +471,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\ \@linkedin}
+          \newline
         }
       \ifthenelse{\isundefined{\@twitter}}
         {}
@@ -479,8 +481,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{https://twitter.com/\@twitter}{\faTwitter\ \@twitter}
+          \newline
         }
       \ifthenelse{\isundefined{\@skype}}
         {}
@@ -489,8 +491,8 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \faSkype\ \@skype
+          \newline
         }
       \ifthenelse{\isundefined{\@homepage}}
         {}
@@ -499,14 +501,19 @@
             {
               \setbool{istart}{false} 
             }
-            {\@headersocialsep}
           \href{http://\@homepage}{\faNewspaperO\ \@homepage}
         }
     } \\
     \ifthenelse{\isundefined{\@quote}}
       {}
       {\vspace{6.0mm}\headerquotestyle{\@quote\\}\vspace{5.0mm}}
-  \end{center}
+    \end{flushleft}
+
+    \columnbreak
+     \begin{flushright}
+        \includegraphics[width=3cm, height=3cm, keepaspectratio]{\@profileimage}
+     \end{flushright}
+ \end{multicols}
 }
 
 % Define a footer for CV
