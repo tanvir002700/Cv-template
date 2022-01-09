@@ -6,4 +6,7 @@
 - All section are update with fake information.
 - Most of the time you need to edit awesome-cv.cls file for your own customization.
 
+## Build
+ `$ xelatex cv.tex`
+
 ## And finally special thanks to [posquit0](https://github.com/posquit0) for his awesome-cv theme.
